@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading, Grid } from "@chakra-ui/react";
 import { useLocalObservable, observer } from "mobx-react-lite";
 import React from "react";
 
@@ -22,30 +22,32 @@ const Home: React.FC = () => {
         changeValue={(txt: string) => store.setSearch(txt)}
       />
 
-      <Heading as="h3" size="lg">
-        Suas pesquisas anteriores
-      </Heading>
-      {store.searchList.map((n) => (
-        <span>{n}</span>
-      ))}
+      <Grid p="20" templateColumns="repeat(5, 1fr)" gap={6}>
+        <Heading as="h3" size="lg">
+          Suas pesquisas anteriores
+        </Heading>
+        {store.searchList.map((n) => (
+          <span>{n}</span>
+        ))}
 
-      <Heading as="h3" size="lg">
-        Lista dos TOP Filmes
-      </Heading>
-      {store.topMoviesSearched.map((movie: types.IMovie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
-
-      <Heading as="h3" size="lg">
-        Todos resultados
-      </Heading>
-      {store.loading ? (
-        <img src={loading} alt="" />
-      ) : (
-        store.movies.map((movie: types.IMovie) => (
+        <Heading as="h3" size="lg">
+          Lista dos TOP Filmes
+        </Heading>
+        {store.topMoviesSearched.map((movie: types.IMovie) => (
           <MovieCard key={movie.id} movie={movie} />
-        ))
-      )}
+        ))}
+
+        <Heading as="h3" size="lg">
+          Todos resultados
+        </Heading>
+        {store.loading ? (
+          <img src={loading} alt="" />
+        ) : (
+          store.movies.map((movie: types.IMovie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))
+        )}
+      </Grid>
     </>
   );
 };

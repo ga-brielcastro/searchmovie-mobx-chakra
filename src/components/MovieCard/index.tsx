@@ -11,6 +11,8 @@ const MovieCard: React.FC<IProps> = ({ movie }) => {
   return (
     <Box maxW="sm" overflow="hidden">
       <Image
+        borderRadius="full"
+        boxSize="200px"
         src={`https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`}
       />
       <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated>
