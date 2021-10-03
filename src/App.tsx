@@ -1,10 +1,13 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
+
+import Home from "./pages/Home";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <p>Hello</p>
-    </div>
+    <ChakraProvider>
+      <Home />
+    </ChakraProvider>
   );
 };
 

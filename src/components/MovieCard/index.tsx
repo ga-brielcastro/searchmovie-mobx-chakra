@@ -1,18 +1,21 @@
-import * as types from '../../types';
-import { observer } from 'mobx-react-lite'
-import { Container, Poster, Title } from './styles';
+import { observer } from "mobx-react-lite";
 
-interface MovieCardProps {
-  movie: types.Movie;
+import * as types from "../../types";
+
+interface IMovieCardProps {
+  movie: types.IMovie;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
+const MovieCard: React.FC<IMovieCardProps> = () => {
   return (
-    <Container>
-      <Poster src={`https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`} />
-      <Title>{movie.title}</Title>
-    </Container>
+    <div>
+      {/* <img
+        src={`https://image.tmdb.org/t/p/w220_and_h330_face${movie.poster_path}`}
+      />
+      <p>{movie.title}</p> */}
+      <p>Title Movie</p>
+    </div>
   );
-}
+};
 
 export default observer(MovieCard);
