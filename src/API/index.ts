@@ -17,15 +17,16 @@ class API {
     const result = await this.base.get(
       `/search/movie?api_key=${API_KEY}&query=${search}`
     );
-    return result.data;
+
+    return result.data.results;
   }
 
   public async getTopMovies(): Promise<types.IMovie[]> {
     const result = await this.base.get(
       `/movie/top_rated?language=pt-BR&api_key=${API_KEY}`
     );
-    // return result.data.results;
-    return result.data;
+
+    return result.data.results;
   }
 }
 
