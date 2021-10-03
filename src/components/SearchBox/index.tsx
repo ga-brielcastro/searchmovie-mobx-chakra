@@ -22,7 +22,7 @@ const SearchBox: React.FC<ISearchBoxProps> = ({ value, onChange }) => {
       <Input
         value={displayValue}
         onChange={handleSearch}
-        variant="filled"
+        variant="flushed"
         placeholder="Pesquise o filme aqui"
       />
     </>

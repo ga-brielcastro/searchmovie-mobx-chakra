@@ -55,6 +55,6 @@ export class Store {
     return this.movies
       .slice()
       .sort((l, r) => l.popularity - r.popularity)
-      .slice(0, 10);
+      .slice(0, 5);
   }
 }
